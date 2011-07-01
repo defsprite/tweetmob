@@ -514,7 +514,8 @@ var tagmob = (function() {
       var word_color = words[i].color || (paletteLength > 0 ? options.palette[i % paletteLength] : color);
       w.push(initializeWord(words[i].word, scale, unrandom() < rProb ? rOrient : 0, word_color));
       var xPos = parseInt(i > 0 ? (width / 4.0 - unrandom() * width / 2.0) : (w[i].bbox.min_x - w[i].bbox.max_x) / 2.0);
-      moveWord(w[i], xPos, w[i].rotate ? -(w[i].bbox.max_y - w[i].bbox.min_y) / 2.0 : 0);
+      var yPos = parseInt()
+      moveWord(w[i], xPos, w[i].rotate ? -(w[i].bbox.max_y - w[i].bbox.min_y) / 2.0 : w[i].bbox.max_y - w[i].bbox.min_y);
       if (i > 0) positionWord(w, i, width * 2, height * 2, gContext, spiralOptions);
       mergeBboxes(globalBbox, w[i].bbox);
       if (options.drawBboxes) drawBboxes(w[i], gContext);
