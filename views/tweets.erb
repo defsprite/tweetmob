@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title></title>
+  <meta http-equiv="refresh" content="15; URL=/">
+  <script src="tagmob.js" type="text/javascript"></script>
+  <script src="fonts/OldSansBlack_500.font.js" type="text/javascript"></script>
+</head>
+<body>
+<div>
+  <ol id="wordcloud">
+    <% @words.each do |k, v| %>
+      <li data-count="<%= v %>"><%= k %></li>
+    <% end %>
+  </ol>
+
+</div>
+<script type="text/javascript">
+  var options = {
+    width: 800,
+    height: 600,
+    //hoverColor: "#00FF00",
+    //selectColor: "#FF0000",
+    maxFontHeight: 200,
+    minFontHeight: 15,
+    scaleToFit: true,
+    rotationProbability: 0.5,
+    palette: ["#A82221", "#DB5E31", "#EDA23E", "#F2CB67", "#BFB840"]
+
+  };
+
+  var list = document.getElementById("wordcloud");
+  redraw = tagmob.createFromList(list, options);
+
+
+</script>
+</body>
+</html>
