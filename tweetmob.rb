@@ -2,7 +2,7 @@
 require 'sinatra'
 require 'erb'
 require 'twitter'
-require  'lib/stopwords'
+require  './lib/stopwords'
 
 @@hashtag = "betahaushh"
 @@search = Twitter::Search.new.hashtag(@@hashtag).no_retweets.per_page(100)
